@@ -293,10 +293,14 @@ while (cerrar == false)
                 mi_primo.primos();
                 break;
             case 8:
+                AreaVolumenCubo mi_cubo = new AreaVolumenCubo();
+                mi_cubo.areavolumencubo();
                 break;
             case 9:
                 break;
             case 10:
+                MayorMenor0 mi_numero0 = new MayorMenor0();
+                mi_numero0.mayormenor0();
                 break;
             case 11:
                 break;
