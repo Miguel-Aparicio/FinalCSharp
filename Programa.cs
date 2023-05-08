@@ -8,7 +8,7 @@ using ListaOrdenadaA;
 using FactorialA;
 using NumeroPrimoA;
 using AreaVolumenCuboA;
-using SumaNUmerosParesA;
+using SumaNumerosParesA;
 using NumeroPositivoNegativoCeroA;
 using MediaListaA;
 using AdivinarNumeroA;
@@ -17,53 +17,6 @@ using EliminarDuplicadosA;
 using CapicuaA;
 
 /*
-
-void NumeroPrimo()
-{
-    int num = 0, i;
-    bool esPrimo = true;
-
-    Write("Introduce un número entero positivo: ");
-    if (!int.TryParse(ReadLine(), out num))
-    {
-        WriteLine("Número invalido");
-        return;
-    }
-
-    for (i = 2; i < num; i++)
-    {
-        if (num % i == 0)
-        {
-            esPrimo = false;
-            break;
-        }
-    }
-
-    if (esPrimo)
-        WriteLine("{0} es un número primo", num);
-    else
-        WriteLine("{0} no es un número primo", num);
-}
-
-void AreaVolumenCubo()
-{
-    double lado = 0, area, volumen;
-
-    Write("Introduce el valor del lado del cubo: ");
-    if (!double.TryParse(ReadLine(), out lado))
-    {
-        WriteLine("Lado invalido");
-        return;
-    }
-
-    area = 6 * Pow(lado, 2);
-    volumen = Pow(lado, 3);
-
-    WriteLine("El área del cubo es {0}", area);
-    WriteLine("El volumen del cubo es {0}", volumen);
-
-    ReadKey();
-}
 
 void SumaNumerosPares()
 {
@@ -297,6 +250,8 @@ while (cerrar == false)
                 mi_cubo.areavolumencubo();
                 break;
             case 9:
+                SumaNumerosPares mi_par = new SumaNumerosPares();
+                mi_par.sumanumerospares();
                 break;
             case 10:
                 MayorMenor0 mi_numero0 = new MayorMenor0();
