@@ -16,86 +16,6 @@ using AnagramaA;
 using EliminarDuplicadosA;
 using CapicuaA;
 
-/*
-
-
-void AdivinarNumero()
-{
-
-    Random random = new Random();
-    int numeroAleatorio = random.Next(1, 101);
-    int intentos = 0;
-    int numeroUsuario = 0;
-
-    while (numeroUsuario != numeroAleatorio)
-    {
-        WriteLine("Adivina el número (entre 1 y 100):");
-        if (!int.TryParse(ReadLine(), out numeroUsuario))
-        {
-            WriteLine("Número invalido");
-            continue;
-        }
-        intentos++;
-
-        if (numeroUsuario < numeroAleatorio)
-        {
-            WriteLine("El número introducido es menor que el número aleatorio.");
-        }
-        else if (numeroUsuario > numeroAleatorio)
-        {
-            WriteLine("El número introducido es mayor que el número aleatorio.");
-        }
-    }
-
-    WriteLine("¡Has acertado el número en " + intentos + " intentos!");
-}
-
-
-void Capicua()
-{
-    Console.Write("Ingresa un número: ");
-    int num = 0;
-    if (!int.TryParse(ReadLine(), out num))
-    {
-        WriteLine("Número invalido");
-        return;
-    }
-    int originalNum = num;
-    int reversedNum = 0;
-
-    while (num > 0)
-    {
-        int digit = num % 10;
-        reversedNum = (reversedNum * 10) + digit;
-        num /= 10;
-    }
-
-    if (originalNum == reversedNum)
-    {
-        Console.WriteLine("El número es capicúa.");
-    }
-    else
-    {
-        Console.WriteLine("El número no es capicúa.");
-    }
-}
-*/
-
-/*
-AnyoBisiesto();
-palindromo();
-ordenarLista();
-factorial();
-NumeroPrimo();
-AreaVolumenCubo();
-SumaNumerosPares();
-NumeroPositivoNegativoCero();
-MediaLista();
-AdivinarNumero();
-Anagrama();
-EliminarDuplicados();
-Capicua();
-*/
 bool cerrar = false;
 while (cerrar == false)
 {
@@ -177,7 +97,8 @@ while (cerrar == false)
                 mi_medialista.medialista();
                 break;
             case 12:
-
+                AdivinarNumero mi_juego = new AdivinarNumero();
+                mi_juego.adivinarnumero();
                 break;
             case 13:
                 Anagrama mi_anagrama = new Anagrama();
