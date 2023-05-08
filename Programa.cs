@@ -1,48 +1,10 @@
 ﻿using static System.Console;
-using static System.Math;
 
-void MenorMayor()
-{
+using MenorMayorA;
+using ParImparA;
 
-    int[] numeros = { 5, 3, 8, 1, 7, 2 };
-    int mayor = numeros[0];
-    int menor = numeros[0];
+/*
 
-    foreach (int numero in numeros)
-    {
-        if (numero > mayor)
-        {
-            mayor = numero;
-        }
-        if (numero < menor)
-        {
-            menor = numero;
-        }
-    }
-
-    WriteLine("El mayor número es: " + mayor);
-    WriteLine("El menor número es: " + menor);
-    ReadLine();
-}
-
-void ParImpar()
-{
-    int numero = 0;
-    Write("Ingrese un número entero: ");
-    if (int.TryParse(ReadLine(), out numero))
-        if (numero % 2 == 0)
-        {
-            WriteLine("El número es par");
-        }
-        else
-        {
-            WriteLine("El número es impar");
-        }
-    else
-    {
-        WriteLine("Ha entrado un número erroneo");
-    }
-}
 
 void AnyoBisiesto()
 {
@@ -321,9 +283,9 @@ void Capicua()
         Console.WriteLine("El número no es capicúa.");
     }
 }
+*/
 
-MenorMayor();
-ParImpar();
+/*
 AnyoBisiesto();
 palindromo();
 ordenarLista();
@@ -337,3 +299,18 @@ AdivinarNumero();
 Anagrama();
 EliminarDuplicados();
 Capicua();
+*/
+
+WriteLine("Introduzca el número de su opción: ");
+string? input = ReadLine();
+switch (input)
+{
+    case "1":
+        MenorMayor mi_menormayor = new MenorMayor();
+        mi_menormayor.menormayor();
+        break;
+    case "2":
+        ParImpar mi_parimpar = new ParImpar();
+        mi_parimpar.parimpar();
+        break;
+}
