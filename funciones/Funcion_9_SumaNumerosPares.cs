@@ -32,7 +32,7 @@ class SumaNumerosPares
                     WriteLine("Error. Solo son válidos numeros enteros separados por comas.");
                 }
             WriteLine("\nIntro o cualquier letra (nueva lista) m (Volver al menu)");
-            string seguir = ReadLine();
+            string? seguir = ReadLine();
             if (seguir == "m" || seguir == "M") break;
             else continue;
             }
