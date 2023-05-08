@@ -3,75 +3,20 @@
 using MenorMayorA;
 using ParImparA;
 using AnyoBisiestoA;
+using PalindromoA;
+using ListaOrdenadaA;
+using FactorialA;
+using NumeroPrimoA;
+using AreaVolumenCuboA;
+using SumaNUmerosParesA;
+using NumeroPositivoNegativoCeroA;
+using MediaListaA;
+using AdivinarNumeroA;
+using AnagramaA;
+using EliminarDuplicadosA;
+using CapicuaA;
 
 /*
-
-
-void palindromo()
-{
-    Write("Ingrese una palabra o frase: ");
-    string? texto = ReadLine();
-    if (texto == null)
-    {
-        Write("Texto invalido");
-        return;
-    }
-    texto = texto.ToLower().Replace(" ", "");
-    bool palindromo = true;
-    for (int i = 0; i < texto.Length / 2; i++)
-    {
-        if (texto[i] != texto[texto.Length - 1 - i])
-        {
-            palindromo = false;
-            break;
-        }
-    }
-
-    if (palindromo)
-    {
-        WriteLine("La cadena es un palíndromo");
-    }
-    else
-    {
-        WriteLine("La cadena no es un palíndromo");
-    }
-
-}
-
-void ordenarLista()
-{
-    string[] nombres = { "Juan", "Maria", "Ana", "Pedro" };
-
-    Array.Sort(nombres);
-
-    WriteLine("Lista ordenada alfabéticamente:");
-
-    foreach (string nombre in nombres)
-    {
-        WriteLine(nombre);
-    }
-}
-
-void factorial()
-{
-    int num = 0, factorial = 1;
-
-    Write("Introduce un número entero positivo: ");
-    if (int.TryParse(ReadLine(), out num))
-    {
-
-        for (int i = 1; i <= num; i++)
-        {
-            factorial *= i;
-        }
-
-        WriteLine("El factorial de {0} es {1}", num, factorial);
-    }
-    else
-        WriteLine("Número inválido");
-
-    ReadKey();
-}
 
 void NumeroPrimo()
 {
@@ -283,23 +228,87 @@ Anagrama();
 EliminarDuplicados();
 Capicua();
 */
-
-WriteLine("Introduzca el número de su opción: ");
-string? input = ReadLine();
-switch (input)
+bool cerrar = false;
+while (cerrar == false)
 {
-    case "1":
-        MenorMayor mi_menormayor = new MenorMayor();
-        mi_menormayor.menormayor();
-        break;
-    case "2":
-        ParImpar mi_parimpar = new ParImpar();
-        mi_parimpar.parimpar();
-        break;
-    case "3":
-        AnyoBisiesto mi_anyo = new AnyoBisiesto();
-        mi_anyo.anyobisiesto();
-        break;
-    
-
+    Clear();
+    Write(@"
+        Menu Principal:
+        ------------------------------------------------------
+        - Opción 1: Programa Mayor y menor numero.
+        - Opción 2: Programa detector de números pares.
+        - Opción 3: Programa detector de años bisiestos.
+        - Opción 4: Programa detector de palíndromos.
+        - Opción 5: Programa ordenador de nombres. 
+        - Opción 6: Programa calculador de factoriales.
+        - Opción 7: Programa detector de números primos.
+        - Opción 8: Programa calculador de area y volumen de cubos.
+        - Opción 9: Programa sumatorio de numeros pares.
+        - Opción 10: Programa comparador con 0.
+        - Opción 11: Programa media de una lista.
+        - Opción 12: Programa juego de adivinación.
+        - Opción 13: Programa detector de anagramas.
+        - Opción 14: Programa eliminador de duplicados.
+        - Opción 15: Programa detector de capicuas.
+        ------------------------------------------------------
+        - Opción 0: Salir del Menu.
+        ------------------------------------------------------
+        Introduzca el número de su opción: ");
+    string? input = ReadLine();
+    int opcion;
+    if (string.IsNullOrEmpty(input)) {WriteLine("\n No ha ingresado ninguna opción. Pulse intro para probar de nuevo"); ReadLine();continue;}
+    else if (int.TryParse(input, out opcion))
+    {
+        switch (opcion)
+        {
+            case 0 :
+                cerrar = true;
+                break;
+            case 1:
+                MenorMayor mi_menormayor = new MenorMayor();
+                mi_menormayor.menormayor();
+                break;
+            case 2:
+                ParImpar mi_parimpar = new ParImpar();
+                mi_parimpar.parimpar();
+                break;
+            case 3:
+                AnyoBisiesto mi_anyo = new AnyoBisiesto();
+                mi_anyo.anyobisiesto();
+                break;
+            case 4:
+                Palindromo mi_palindromo = new Palindromo();
+                mi_palindromo.palindromo();
+                break;
+            case 5:
+                ListaOrdenada mi_listaordenada = new ListaOrdenada();
+                mi_listaordenada.listaordenada();
+                break;
+            case 6:
+                Factorial mi_factorial = new Factorial();
+                mi_factorial.factorial();
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9:
+                break;
+            case 10:
+                break;
+            case 11:
+                break;
+            case 12:
+                break;
+            case 13:
+                break;
+            case 14:
+                break;
+            case 15:
+                break;
+        }
+    }
+    else {WriteLine ("\nSolo se admiten números para selecionar la opción.\nPulse intro para probar de nuevo"); ReadLine();continue;}
 }
+Clear();
+WriteLine("\n\n¡Hasta pronto! :)\n\n\t");
