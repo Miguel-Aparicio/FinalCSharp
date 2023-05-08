@@ -10,7 +10,7 @@ class MediaLista
             Clear();
             WriteLine("Programa calculador de la media de lista de números enteros...");
             WriteLine("------------------------------------------------------");
-            Write("Ingrese un número para comparar: ");
+            Write("Ingrese una lista de números separados por comas: ");
             string? input = ReadLine();
             if (string.IsNullOrWhiteSpace(input)) {WriteLine("Error. No ha introducido ningún valor.");}
             else

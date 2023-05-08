@@ -218,8 +218,11 @@ while (cerrar == false)
                 mi_medialista.medialista();
                 break;
             case 12:
+
                 break;
             case 13:
+                Anagrama mi_anagrama = new Anagrama();
+                mi_anagrama.anagrama();
                 break;
             case 14:
                 break;
