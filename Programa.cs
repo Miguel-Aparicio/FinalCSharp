@@ -188,6 +188,8 @@ while (cerrar == false)
                 mi_duplicado.eliminarduplicados();
                 break;
             case 15:
+                Capicua mi_capi = new Capicua();
+                mi_capi.capicua();
                 break;
         }
     }
