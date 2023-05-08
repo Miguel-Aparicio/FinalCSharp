@@ -50,47 +50,6 @@ void AdivinarNumero()
     WriteLine("¡Has acertado el número en " + intentos + " intentos!");
 }
 
-void Anagrama()
-{
-    string palabra1 = "roma";
-    string palabra2 = "amor";
-
-    char[] letras1 = palabra1.ToLower().ToCharArray();
-    char[] letras2 = palabra2.ToLower().ToCharArray();
-
-    Array.Sort(letras1);
-    Array.Sort(letras2);
-
-    bool sonAnagramas = letras1.SequenceEqual(letras2);
-
-    if (sonAnagramas)
-    {
-        WriteLine(palabra1 + " y " + palabra2 + " son anagramas.");
-    }
-    else
-    {
-        WriteLine(palabra1 + " y " + palabra2 + " no son anagramas.");
-    }
-}
-
-void EliminarDuplicados()
-{
-    List<int> numeros = new List<int>() { 10, 20, 30, 20, 50 };
-
-    List<int> numerosSinDuplicados = new List<int>();
-
-    foreach (int numero in numeros)
-    {
-        if (!numerosSinDuplicados.Contains(numero))
-        {
-            numerosSinDuplicados.Add(numero);
-        }
-    }
-
-    WriteLine("Números originales: " + string.Join(", ", numeros));
-    WriteLine("Números originales: " + string.Join(", ", numeros));
-
-}
 
 void Capicua()
 {
@@ -225,6 +184,8 @@ while (cerrar == false)
                 mi_anagrama.anagrama();
                 break;
             case 14:
+                EliminarDuplicados mi_duplicado = new EliminarDuplicados();
+                mi_duplicado.eliminarduplicados();
                 break;
             case 15:
                 break;
