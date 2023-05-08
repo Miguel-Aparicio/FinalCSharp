@@ -2,27 +2,10 @@
 
 using MenorMayorA;
 using ParImparA;
+using AnyoBisiestoA;
 
 /*
 
-
-void AnyoBisiesto()
-{
-    Write("Ingrese un año: ");
-    int anio = 0;
-    if (int.TryParse(ReadLine(), out anio))
-
-        if ((anio % 4 == 0 && anio % 100 != 0) || anio % 400 == 0)
-        {
-            WriteLine(anio + " es un año bisiesto");
-        }
-        else
-        {
-            WriteLine(anio + " no es un año bisiesto");
-        }
-    else
-        WriteLine("Ha entrado un año incorrecto");
-}
 
 void palindromo()
 {
@@ -313,4 +296,10 @@ switch (input)
         ParImpar mi_parimpar = new ParImpar();
         mi_parimpar.parimpar();
         break;
+    case "3":
+        AnyoBisiesto mi_anyo = new AnyoBisiesto();
+        mi_anyo.anyobisiesto();
+        break;
+    
+
 }
