@@ -32,10 +32,10 @@ class MenorMayor
                 WriteLine("Error. Los valores introducidos no son válidos.\nRecuerde escribir números enteros separados por comas.");
             }
             WriteLine("\n¿Quiere introducir otro valor? ");
-            Write(@"Cualquier tecla (Quiero seguir); n (Salir del Programa)");
+            Write(@"Intro o cualquier tecla (Quiero seguir); m (Volver al menu)");
             WriteLine("\n==> ");
             string? seguir = ReadLine();            
-            if (seguir == "n" || seguir == "N")
+            if (seguir == "m" || seguir == "M")
                 {break;}
             else
                 {continue;}

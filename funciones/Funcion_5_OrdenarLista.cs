@@ -29,9 +29,9 @@ class ListaOrdenada
                     WriteLine($"Lista actual: {string.Join(", ", listanombres)}");
                     WriteLine("\nNombre introducido correctamente\n\t");
                 }
-                WriteLine(@"¿Quiere ingresar otro nombre? intro o cualquier tecla = seguir. n = no.");
+                WriteLine(@"¿Quiere ingresar otro nombre? intro o cualquier tecla (seguir) m (Ordenar lista actual)");
                     string? continuar = ReadLine();
-                    if (continuar != "n" && continuar != "N") {Clear();continue;}
+                    if (continuar != "m" && continuar != "M") {Clear();continue;}
                     else {break;}
             }
             if (listanombres.Count == 0) {WriteLine("Error. Su lista esta vacía.");}
@@ -45,10 +45,10 @@ class ListaOrdenada
                 WriteLine($"\nSu lista de nombres ordenada alfabeticamente es {string.Join(", ", listanombres)}");
             }
             WriteLine("\n¿Quiere comprobar una nueva lista? ");
-            Write(@"Intro o Cualquier tecla (nueva lista); n (Salir del Programa)");
+            Write(@"Intro o Cualquier tecla (nueva lista); m (Volver al menu)");
             Write("\n==> ");
             string? seguir = ReadLine();            
-            if (seguir == "n" || seguir == "N")
+            if (seguir == "m" || seguir == "M")
                 {break;}
             else
                 {continue;}

@@ -32,10 +32,10 @@ class ParImpar
             WriteLine("Error. Introduzca valores para realizar la operación."); 
             }
             WriteLine("\n¿Quiere comprobar otro número? ");
-            Write(@"Cualquier tecla (Quiero seguir); n (Salir del Programa)");
+            Write(@"Intro o cualquier tecla (Quiero seguir); m (Volver al menu)");
             Write("\n==> ");
             string? seguir = ReadLine();            
-            if (seguir == "n" || seguir == "N")
+            if (seguir == "m" || seguir == "M")
                 {break;}
             else
                 {continue;}

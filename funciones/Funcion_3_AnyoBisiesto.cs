@@ -26,9 +26,9 @@ class AnyoBisiesto
                 }
             else
                 WriteLine("\nError. Ha entrado un año incorrecto");
-            WriteLine("\n ¿Quiere comprobar otro año?\n Intro o cualquier tecla (seguir) n (salir):");
+            WriteLine("\nIntro o cualquier tecla (Comprobar otro año) m (Volver al menu):");
             string? seguir = ReadLine();            
-            if (seguir == "n" || seguir == "N")
+            if (seguir == "m" || seguir == "M")
                 {break;}
             else
                 {continue;}

@@ -36,10 +36,10 @@ class Palindromo
                     {WriteLine ("Error. No se admite ningún elemento que no sea caracter de texto.");}
             }
             WriteLine("\n¿Quiere comprobar otra frase? ");
-            Write(@"Intro o Cualquier tecla (Quiero seguir); n (Salir del Programa)");
+            Write(@"Intro o Cualquier tecla (Nueva frase o palabra); m (Volver al menu)");
             Write("\n==> ");
             string? seguir = ReadLine();            
-            if (seguir == "n" || seguir == "N")
+            if (seguir == "m" || seguir == "M")
                 {break;}
             else
                 {continue;}

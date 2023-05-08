@@ -289,6 +289,8 @@ while (cerrar == false)
                 mi_factorial.factorial();
                 break;
             case 7:
+                NumeroPrimo mi_primo = new NumeroPrimo();
+                mi_primo.primos();
                 break;
             case 8:
                 break;
