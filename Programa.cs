@@ -18,50 +18,6 @@ using CapicuaA;
 
 /*
 
-void SumaNumerosPares()
-{
-    List<int> numeros = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-    int suma = 0;
-
-    foreach (int num in numeros)
-    {
-        if (num % 2 == 0)
-            suma += num;
-    }
-
-    WriteLine("La suma de los números pares es {0}", suma);
-
-    ReadKey();
-}
-
-void NumeroPositivoNegativoCero()
-{
-
-    int num;
-
-    Write("Introduce un número entero: ");
-    if (!int.TryParse(ReadLine(), out num))
-    {
-        WriteLine("Número invalido");
-        return;
-    }
-
-    if (num > 0)
-        WriteLine("{0} es un número positivo", num);
-    else if (num < 0)
-        WriteLine("{0} es un número negativo", num);
-    else
-        WriteLine("{0} es cero", num);
-
-    ReadKey();
-}
-
-void MediaLista()
-{
-    int[] numeros = { 10, 20, 30, 40, 50 };
-    double media = numeros.Average();
-    WriteLine("La media es: " + media);
-}
 
 void AdivinarNumero()
 {
@@ -258,6 +214,8 @@ while (cerrar == false)
                 mi_numero0.mayormenor0();
                 break;
             case 11:
+                MediaLista mi_medialista = new MediaLista();
+                mi_medialista.medialista();
                 break;
             case 12:
                 break;
