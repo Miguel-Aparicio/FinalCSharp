@@ -8,41 +8,35 @@ class Palindromo
         while (true)
         {
             Clear();
-            WriteLine("Programa indentificador de palindromos...");
+            WriteLine("Programa detector de palíndromos...");
             WriteLine("------------------------------------------------------");
-            WriteLine("Ingrese una palabra o frase para identificar: ");
-            string? input= ReadLine();
-            if (input == null)
-                {WriteLine("Error. No has introducido caracteres.");}
-            else if (input.All(char.IsWhiteSpace))
-                {WriteLine("Error. No introduzca solo espacios.");}
+            Write("Ingrese una palabra o frase para detectar (sin tildes): ");
+            string? input = ReadLine();
+            if (string.IsNullOrWhiteSpace(input)) {WriteLine("Error. No ha introducido ningún valor.");}
             else
             {
-                string[] inputnospace = input.Split(" ");
-                string solocarac = string.Join("",inputnospace);
-                if (solocarac.All(char.IsLetter))
+                string frase = input.ToLower();
+                frase = frase.Replace(" ","");
+                frase = frase.Replace(".","");
+                frase = frase.Replace(",","");
+                if (frase.All(char.IsLetter))
                 {
-                    string frase = solocarac.ToLower();
-                    List<char> fraselist = frase.ToList();
-                    List<char> fraseinv = new List<char>();
-                    fraseinv.AddRange(fraselist);
-                    fraseinv.Reverse();
-                    if (new string(fraselist.ToArray()).Equals(new string(fraseinv.ToArray())))
-                        {WriteLine($"\nLa frase: {input} es un palíndromo.");}
-                    else
-                        {WriteLine($"\nLa frase: {input} no es un palíndromo.");}
+                    char[] arrayinv = frase.Reverse().ToArray();
+                    string frasereverse = new string(arrayinv);
+                    if (frase == frasereverse)
+                    {
+                        WriteLine($"\n La frase \"{input}\" es un palíndromo.\n Se lee igual de derecha a izquierda que de izquierda a derecha.");
+                    }
+                    else {WriteLine($"\n La frase \"{input}\" NO es un palíndromo.\n No Se lee igual en los dos sentidos de escritura.");}
                 }
-                else
-                    {WriteLine ("Error. No se admite ningún elemento que no sea caracter de texto.");}
+                else {WriteLine("\nError, has introducido caracteres incorrectos.");}
             }
-            WriteLine("\n¿Quiere comprobar otra frase? ");
-            Write(@"Intro o Cualquier tecla (Nueva frase o palabra); m (Volver al menu)");
-            Write("\n==> ");
-            string? seguir = ReadLine();            
-            if (seguir == "m" || seguir == "M")
-                {break;}
-            else
-                {continue;}
+            WriteLine("\n¿Quiere introducir otros valores?");
+            WriteLine("Intro o cualquier tecla (continuar) m (Volver al menu)");
+            Write("==>");
+            string? seguir = ReadLine();
+            if (seguir == "m"||seguir == "M") {break;}
+            else continue;
         }
         Clear();
     }

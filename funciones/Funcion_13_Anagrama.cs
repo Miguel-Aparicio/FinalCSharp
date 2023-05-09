@@ -8,26 +8,55 @@ class Anagrama
         while (true)
         {
             Clear();
-            WriteLine("Programa detector de anagramas...");
+            WriteLine("Programa comparador de anagramas...");
             WriteLine("------------------------------------------------------");
-            Write("Ingrese una palabra o frase para detectar (sin tildes): ");
-            string? input = ReadLine();
-            if (string.IsNullOrWhiteSpace(input)) {WriteLine("Error. No ha introducido ningún valor.");}
+            Write("Ingrese una palabra para detectar (sin tildes): ");
+            string? input1;
+            string? input2;
+            input1 = ReadLine();
+            if (string.IsNullOrWhiteSpace(input1)) {WriteLine("Error. No ha introducido ningún valor.\nPrueba de nuevo.");}
             else
             {
-                string frase = input.ToLower();
-                frase = frase.Replace(" ","");
-                frase = frase.Replace(".","");
-                frase = frase.Replace(",","");
-                if (frase.All(char.IsLetter))
+                string frase1 = input1.ToLower();
+                if (frase1.All(char.IsLetter))
                 {
-                    char[] arrayinv = frase.Reverse().ToArray();
-                    string frasereverse = new string(arrayinv);
-                    if (frase == frasereverse)
-                    {
-                        WriteLine($"\n La frase \"{input}\" es un anagrama.\n Se lee igual de derecha a izquierda que de izquierda a derecha.");
-                    }
-                    else {WriteLine($"\n La frase \"{input}\" NO es un anagrama.\n No Se lee igual en los dos sentidos de escritura.");}
+                    while (true)
+                    {    
+                        Clear();
+                        WriteLine("Programa comparador de anagramas...");
+                        WriteLine("------------------------------------------------------");
+                        WriteLine($"Primera palabra introducida: {input1}");
+                        Write("Ingrese una segunda palabra (sin tildes): ");
+                        input2 = ReadLine();
+                        if (string.IsNullOrWhiteSpace(input2)) {WriteLine("Error. No ha introducido ningún valor.\nPulsa intro para probar de nuevo.");ReadLine();continue;}
+                        else
+                        {
+                            string frase2 = input2.ToLower();
+                            if (frase2.All(char.IsLetter))
+                            {
+    
+                                char[] array1 = frase1.ToArray();
+                                char[] array2 = frase2.ToArray();
+                                Array.Sort(array1);
+                                Array.Sort(array2);
+                                
+                                bool sonAnagramas = array1.SequenceEqual(array2);
+
+                                if (sonAnagramas)
+                                {
+                                    WriteLine($"\n\"{input1}\" y \"{input2}\" son anagrama.");
+                                    break;
+                                }
+                                else
+                                {
+                                    WriteLine($"\n\"{input1}\" y \"{input2}\" no son anagrama.");
+                                    break;
+                                }
+
+                            }
+                            else {WriteLine("\nError, has introducido caracteres incorrectos.\n Pulse intro para probar de nuevo.");ReadLine();continue;}
+                        }
+                    }    
                 }
                 else {WriteLine("\nError, has introducido caracteres incorrectos.");}
             }
